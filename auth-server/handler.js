@@ -29,20 +29,16 @@ const oAuth2Client = new google.auth.OAuth2(
   redirect_uris[0]
 );
 
-/**
- *
+/*
  * The first step in the OAuth process is to generate a URL so users can log in with
  * Google and be authorized to see your calendar. After logging in, they’ll receive a code
  * as a URL parameter.
- *
  */
 module.exports.getAuthURL = async () => {
-  /**
-   *
+  /*
    * Scopes array passed to the `scope` option. Any scopes passed must be enabled in the
    * "OAuth consent screen" settings in your project on your Google Console. Also, any passed
    *  scopes are the ones users will see when the consent screen is displayed to them.
-   *
    */
   const authUrl = oAuth2Client.generateAuthUrl({
     access_type: "offline",
