@@ -25,8 +25,8 @@
       <button id="getURL">Get OAuth URL</button>
       <p id="result"></p>
       <a id="authURL" href target="_blank">Click to authorize</a>
-      <!-- STEP 2 -- MAKE SURE STEP 1 WORKS BEFORE MOVING ON-->
 
+      <!-- STEP 2 -- MAKE SURE STEP 1 WORKS BEFORE MOVING ON-->
       <h4>Step 2: Get your code and exchange for an access token</h4>
       <p>
         After you’re redirected back to your Meet app on GitHub, copy the code
@@ -39,6 +39,12 @@
       </label>
       <button id="getToken">Get Token</button>
       <p id="accessToken"></p>
+
+      <!-- STEP 3 -- MAKE SURE STEP 3 WORKS BEFORE MOVING ON-->
+      <h4>Step 3: Get the calendar events using your access token</h4>
+      <button id="getEvents">Get Events</button>
+      <p id="events"></p>
+
     </main>
     <script type="text/javascript">
       // --------------------- STEP 1
@@ -76,7 +82,6 @@
         // if the authorization code is not URL-encoded, then URL-encode it.
         if (decodeURIComponent(code) === code) {
           code = encodeURIComponent(codeValue.value);
-          console.log(code);
         }
         const getTokenRequest = getToken +  "/" + code;
         fetch(getTokenRequest)
@@ -88,6 +93,25 @@
           });
       };
       // --------------------- END OF STEP 2
+
+
+      // -- STEP 3
+      const getEvents = document.getElementById("getEvents");
+      const events = document.getElementById("events");
+      const getCalendarEvents = "https://nbwr0ujhgg.execute-api.eu-central-1.amazonaws.com/dev/api/get-events";
+
+      getEvents.onclick = function () {
+        const { access_token } = JSON.parse(accessTokenElement.innerText);
+        const eventRequest = getCalendarEvents + "/" + access_token;
+        fetch(eventRequest)
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (json) {
+            events.innerText = JSON.stringify(json, null, 2);
+          });
+      };
+      // -- END OF STEP 3
 
     </script>
   </body>
