@@ -24,9 +24,9 @@
 		Then the user should see a list of cities (suggestions) that match what they’ve typed
 
     Scenario 3: User can select a city from the suggested list.
-		Given the user was typing “Berlin” in the city textbox and the list of suggested cities is showing
+		Given the user was typing “Berlin” in the city textbox, And the list of suggested cities is showing
 		When the user selects a city (e.g., “Berlin, Germany”) from the list
-		Then the city should be changed to that city and the user should see a list of upcoming events in that city
+		Then the city should be changed to that city, And the list of suggestions should disappear, And the user should see a list of upcoming events in that city
 
 
 ### **Feature 2: Show/hide an event's details**
@@ -98,4 +98,4 @@
 	Scenario 1: Show a chart with the number of upcoming events in each city
 		Given the user has started the app,
 		When the user has not started a search yet,
-		Then the user should see a chart with the number of upcoming events in each citys
+		Then the user should see a chart with the number of upcoming events in each city

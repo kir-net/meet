@@ -23,21 +23,27 @@ class Event extends Component {
         return (
             <div className="event">
                 <h3 className="title">{event.summary}</h3>
-                <p className="location">{event.location}</p>
                 <p className="start-time">
-                    {event.start.dateTime}
-                </p>               
-                {!this.state.collapsed && (
-                    <p className="event-details">
-                        {event.description}
-                        {event.htmlLink}
-                    </p>
-                )}
+                    {event.start.dateTime.slice(0,10)}                  
+                </p>
+                 
+                <p className="location">{event.location}</p>  
                 <button 
                     className="btn-toggle-details" 
                     onClick={this.handleClick}>
                     {this.toggleBtnText()}
-                </button>
+                </button>            
+                {!this.state.collapsed && (
+                    <p className="event-details">
+                        {event.description}
+                        <p>
+                        <a className="link" target="_blank" href="{event.htmlLink}"> Add to my Calendar</a>
+                        </p>
+                        
+                    </p>
+                    
+                )}
+                
             </div>
         );
     }

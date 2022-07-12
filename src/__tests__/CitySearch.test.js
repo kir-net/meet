@@ -9,7 +9,7 @@ describe('<CitySearch /> component', () => {
     let locations, CitySearchWrapper;
     beforeAll(() => {
         locations = extractLocations(mockData);
-        CitySearchWrapper = shallow(<CitySearch locations={locations} />);
+        CitySearchWrapper = shallow(<CitySearch locations={locations} updateEvents={() => {}} />);
     });
 
     /* -------------------------------------------------------------------
@@ -68,8 +68,34 @@ describe('<CitySearch /> component', () => {
     test('selecting a suggestion should change query state', () => {
         CitySearchWrapper.setState({query: 'Berlin'});
         const suggestions = CitySearchWrapper.state('suggestions');
+        /*
+            This click event will be dealt with in the handleItemClicked() function
+            where you use this.props.updateEvents() to call the updateEvents() function 
+            of the parent component (App). 
+            Back when you wrote this test in “CitySearch.test.js,” however, you didn’t 
+            expect the updateEvents() prop to be passed. Fortunately, this is an easy fix, 
+            as you can simply pass an empty function (updateEvents={() => { }}) into it 
+            by way of the shallow rendering API (more specifically, in the line where you 
+            declared CitySearchWrapper in the beforeAll section in “CitySearch.test.js”).
+        */
         CitySearchWrapper.find('.suggestions li').at(0).simulate('click');
         expect(CitySearchWrapper.state("query")).toBe(suggestions[0]);
+    });
+
+    test('selecting CitySearch input reveals the suggestions list', () => {
+        CitySearchWrapper.find('.city').simulate('focus');
+        expect(CitySearchWrapper.state('showSuggestions')).toBe(true);
+        expect(CitySearchWrapper.find('.suggestions').prop('style')).not.toEqual({ display: 'none' });
+    });
+
+    test('selecting a suggestion should hide the suggestions list', () => {
+        CitySearchWrapper.setState({
+            query: 'Berlin',
+            showSuggestions: undefined
+        });
+        CitySearchWrapper.find('.suggestions li').at(0).simulate('click');
+        expect(CitySearchWrapper.state('showSuggestions')).toBe(false);
+        expect(CitySearchWrapper.find('.suggestions').prop('style')).toEqual({ display: 'none' });
     });
 
 });
