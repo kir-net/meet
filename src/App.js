@@ -16,11 +16,14 @@ class App extends Component {
         numberOfEvents: 24
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         this.mounted = true;
         getEvents().then((events) => {
             if (this.mounted) {
-            this.setState({ events, locations: extractLocations(events) });
+                this.setState({ 
+                    events: events.slice(0, this.state.numberOfEvents), 
+                    locations: extractLocations(events)
+                });
             }
         });
     }
