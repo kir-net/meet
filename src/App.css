@@ -1,5 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
 .App {
   text-align: center;
   padding: 5%;
@@ -90,8 +94,18 @@ input[type="number"] {
     background-color: rgb(255, 255, 255); 
 }
 .event .title{
-    letter-spacing: 0.6vw;
+    display: block;
+    margin: 35px auto;
+    letter-spacing: 0.2vw;
     text-align:center;
+    font-size: xx-large;
+    
+}
+.event .title:hover{
+    letter-spacing: 0.6vw;  
+    color: rgb(171, 27, 255); 
+    letter-spacing: 0.8vw;
+    
 }
 .start-time{
     display: inline-block;
@@ -103,7 +117,8 @@ input[type="number"] {
     text-align: center;
     border: 3px white solid;
     box-shadow: 0 0 5px 5px rgb(47, 83, 115);;
-    border-radius: 100px;   
+    border-radius: 100px; 
+    transform: rotate(-7deg);  
 }
 .location{
     display: inline-block;
@@ -112,7 +127,8 @@ input[type="number"] {
     text-align: center;
     padding: 2vw 1vw;
     border-top: 1px solid  rgb(47, 83, 115);
-    border-bottom: 2px solid  rgb(47, 83, 115);    
+    border-bottom: 2px solid  rgb(47, 83, 115); 
+    transform: rotate(3deg);   
 }
 .event-details{
     padding: 60px 60px 20px;
@@ -284,3 +300,17 @@ input[type="number"] {
     margin: 0 auto;
   }
 }
+
+
+
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }

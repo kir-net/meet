@@ -19,13 +19,16 @@ class NumberOfEvents extends Component {
     render() {
         return (
             <div className="numberOfEvents">
-                <label htmlFor="number-of-events">Max. number of events: </label>
+                <label htmlFor="number-of-events">Show max: </label>
                 
                 <input
                     type="number"
                     className="number-of-events"
+                    min="1" 
+                    max="32"
                     value={this.state.numberOfEvents}
                     onChange={this.handleInputChanged}
+
                 />
             </div>
         );
