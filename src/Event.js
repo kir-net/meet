@@ -12,8 +12,8 @@ class Event extends Component {
 
     toggleBtnText = () => {
         return `${this.state.collapsed 
-            ? 'show details' 
-            : 'hide details'
+            ? 'SHOW DETAILS' 
+            : 'HIDE DETAILS'
         }`;
     };
 
@@ -34,16 +34,17 @@ class Event extends Component {
                     {this.toggleBtnText()}
                 </button>            
                 {!this.state.collapsed && (
-                    <p className="event-details">
+                    <div className="event-details">
                         {event.description}
                         <p>
-                        <a className="link" target="_blank" href="{event.htmlLink}"> Add to my Calendar</a>
-                        </p>
-                        
-                    </p>
-                    
-                )}
-                
+                            <a className="link" 
+                                target="_blank" 
+                                href="{event.htmlLink}"> 
+                                Add to my Calendar
+                            </a>
+                        </p>                       
+                    </div>                   
+                )}               
             </div>
         );
     }

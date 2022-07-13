@@ -30,10 +30,17 @@ describe('<App /> integration', () => {
 
     let AppWrapper;
     // render app
-    beforeAll(() => { AppWrapper = mount( <App /> )});
+    beforeAll(() => { 
+        AppWrapper = mount( <App /> );
+    });
     // clean up the DOM
-    afterAll(()  => { AppWrapper.unmount() });
+    afterAll(() => {
+        AppWrapper.unmount();
+    });
 
+
+
+    // FAILS
     test('App passes "events" state as a prop to EventList', () => { 
         /*  
             check that the state of "events" is not "undefined"
@@ -47,11 +54,14 @@ describe('<App /> integration', () => {
         expect(AppWrapper.find(EventList).props().events).toEqual(AppEventsState);
     });
 
+    // FAILS
     test('App passes "locations" state as a prop to CitySearch', () => {      
         const AppLocationsState = AppWrapper.state('locations');
         expect(AppLocationsState).not.toEqual(undefined);
         expect(AppWrapper.find(CitySearch).props().locations).toEqual(AppLocationsState);   
     });
+
+
 
     test('get list of events matching the city selected by the user', async () => {
         const CitySearchWrapper = AppWrapper.find(CitySearch);
