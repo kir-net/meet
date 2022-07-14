@@ -23,11 +23,15 @@ class Event extends Component {
         return (
             <div className="event">
                 <h3 className="title">{event.summary}</h3>
-                <p className="start-time">
-                    {event.start.dateTime.slice(0,10)}                  
-                </p>
-                 
-                <p className="location">{event.location}</p>  
+                <div className="fb-date-location">
+                    <p className="start-time">
+                        {event.start.dateTime.slice(0,10)}                  
+                    </p>
+                    
+                    <p className="location">{event.location}</p>  
+
+                </div>
+
                 <button 
                     className="btn-toggle-details" 
                     onClick={this.handleClick}>

@@ -102,12 +102,17 @@ input[type="number"] {
 .event .title:hover{
     letter-spacing: 0.6vw;  
     color: rgb(171, 27, 255); 
-    letter-spacing: 0.8vw;
-    
+    letter-spacing: 0.8vw;   
+}
+.fb-date-location{
+    display: flex;
+    align-items: start;
+    width: 100%;
+    padding: 0.6rem 0.2rem;    
 }
 .start-time{
-    display: inline-block;
-    margin-left: 8%;
+    flex-grow: 1;
+  margin: 7%;
     color: rgb(47, 83, 115);
     font-weight: 500;
     font-size: larger;
@@ -122,8 +127,8 @@ input[type="number"] {
     box-shadow: 0 0 8px 5px rgb(47, 83, 115);  
 }
 .location{
-    display: inline-block;
-    margin-left: 30%;
+    flex-grow: 1;
+    margin: 7%;
     width:25%;
     text-align: center;
     padding: 2vw 0;
@@ -245,52 +250,6 @@ input[type="number"] {
   font-family: "Roboto";
 }
 
-@media all and (max-width: 550px){
-.App {
-    padding: 3%;   
-    width: 88%;
-    margin-left: 3%;
-}
-.start-time{
-    display: block;
-    color: rgb(47, 83, 115);
-    font-weight: 400;
-    font-size: larger;
-    width:80%;
-    margin: 10%;
-    padding: 15px;
-    text-align: center;
-    border: 1px rgb(32, 62, 89) solid;
-    border-radius: 100px;
-    background-color: rgba(47, 83, 115, 0.2);
-}
-.location{
-    display: block;
-    margin: 10%;
-    width: 80%;
-    text-align: center;
-    padding: 2vw;
-    border-top: 1px solid  rgb(47, 83, 115);
-    border-bottom: 2px solid  rgb(47, 83, 115);
-}
-.btn-toggle-details {
-    margin-top: 30px;
-    padding: 10px 8px;
-    border: 1px rgb(32, 62, 89) solid;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: rgb(44, 90, 131);
-    color: white;
-  }
-  .event {
-    font-size: smaller;
-    text-align: left;
-   
-  }
-.event-details{
-    padding: 10px 10px 20px;
-}
-}
 
 
 @media only screen and (min-width: 992px) {
@@ -305,16 +264,3 @@ input[type="number"] {
   }
 }
 
-
-
-  @keyframes slidein {
-    from {
-      margin-left: 100%;
-      width: 300%;
-    }
-  
-    to {
-      margin-left: 0%;
-      width: 100%;
-    }
-  }
