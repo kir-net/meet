@@ -10,8 +10,12 @@ class NumberOfEvents extends Component {
         let actValue = parseInt(event.target.value)
         if (actValue > 0 && actValue <= 32) {
             this.setState({ numberOfEvents: actValue });
-        } else {
+        } else if (actValue > 32) {
             this.setState({ numberOfEvents: 32 });
+            actValue = 32;
+        } else {
+            this.setState({ numberOfEvents: NaN });
+            actValue = NaN;
         }
         this.props.updateEvents(undefined, actValue);
     };

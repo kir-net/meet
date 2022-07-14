@@ -41,7 +41,6 @@ class App extends Component {
         if (location === undefined) {
             location = this.state.locationSelected;
         }
-        console.log(maxNumEvents, location)
         getEvents().then((events) => {
             const locationEvents = (location === 'all') 
                 ? events 
