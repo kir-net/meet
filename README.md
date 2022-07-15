@@ -36,20 +36,20 @@
     I should be able to show/hide an event's detail,
     so that I can control which details I am shown.*
 
-	Scenario 1: An event element is collapsed by default
-		Given the user has started a search,
-		When the results are shown,
-		Then all resulting elements should be collapsed by default
-	
-	Scenario 2: User can expand an event to see its details
-		Given the user has started a search, 
-		When the user clicks on one of the events,
-		Then the user should see its details
-		
-	Scenario 3: User can collapse an event to hide its details
-		Given the user has opened an events' details,
-		When the user clicks the "back" button,
-		Then events' details should collapse
+	Scenario 1: An event element is collapsed by default.
+        Given user hasnt searched for any city
+        When the user opens the app
+        Then all resulting elements should be collapsed by default
+
+    Scenario 2: User can expand an event to see its details.
+        Given the user has started a search
+        When the user clicks on the 'show details' button
+        Then the user should see the details
+        
+    Scenario 3: User can collapse an event to hide its details.
+        Given the user has opened an events' details
+        When the user clicks the 'hide details' button
+        Then events' details should collapse
 
 
 ### **Feature 3: Specify number of events**
@@ -59,15 +59,15 @@
     I should be able to specify the number of events
     so that the number of shown events is limited.*
 
-	Scenario 1: When user hasn’t specified a number, 32 is the default number
-		Given the user has started a search,
-		When the users did not specify a number,
-		Then 32 should be the default number
-		
-	Scenario 2: User can change the number of events they want to see
-		Given the user has started a search,
-		When the user wants to change the number of events he wants to see,
-		Then the user should be able to do so
+	Scenario 1: When user hasnt specified a number, 32 is the default number.
+        Given the user has started a search
+        When the users did not specify a number
+        Then 32 should be the default number
+	
+Scenario 2: User can change the number of events they want to see.
+        Given the user has started a search
+        When the user enters a number into the 'show max' field
+        Then the number of listed events should update accordingly
 
 
 ### **Feature 4: Use the app when offline**

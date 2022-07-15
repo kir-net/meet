@@ -13,7 +13,7 @@ class App extends Component {
         events: [],
         locations: [],
         locationSelected: 'all',
-        numberOfEvents: 24
+        numberOfEvents: 32
     }
 
     async componentDidMount() {
@@ -42,7 +42,7 @@ class App extends Component {
             location = this.state.locationSelected;
         }
         getEvents().then((events) => {
-            const locationEvents = (location === 'all') 
+            let locationEvents = (location === 'all') 
                 ? events 
                 : events.filter((event) => event.location === location);
             this.setState({
