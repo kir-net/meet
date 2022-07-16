@@ -11,9 +11,7 @@ defineFeature(feature, test => {
     let AppWrapper;
     test('When user hasnt specified a number, 32 is the default number.', 
         ({ given, when, then }) => {
-            given('the user has started a search', () => {
-                
-            });
+            given('the user has started a search', () => { });
 
             when('the users did not specify a number', () => { 
                 AppWrapper = mount(<App />);

@@ -30,28 +30,32 @@ defineFeature(feature, test => {
                 AppWrapper = mount(<App />);
             });
 
-            when('the user clicks on the \'show details\' button', () => {
-                
+            when("the user clicks on the 'show details' button", () => {
+                AppWrapper.update();
+                AppWrapper.find('.event .btn-toggle-details').at(0).simulate('click');
             });
 
             then('the user should see the details', () => {
-
+                expect(AppWrapper.find('.event .event-details')).toHaveLength(1);
             });
         }
     );
 
     test('User can collapse an event to hide its details.', 
         ({ given, when, then }) => {
-            given('the user has opened an events\' details', () => {
-
+            given("the user has opened an events' details", async ()  => {
+                AppWrapper = await mount(<App />);
+                AppWrapper.update();
+                AppWrapper.find('.event .btn-toggle-details').at(0).simulate("click");
             });
 
-            when('the user clicks the \'hide details\' button', () => {
-
+            when("the user clicks the 'hide details' button", () => {
+                AppWrapper.update();
+                AppWrapper.find('.event .btn-toggle-details').at(0).simulate("click");
             });
 
-            then('events\' details should collapse', () => {
-
+            then("events' details should collapse", () => {
+                expect(AppWrapper.find('.event .event-details')).toHaveLength(0);
             });
         }
     );
