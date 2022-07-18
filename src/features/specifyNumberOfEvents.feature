@@ -1,4 +1,4 @@
-Feature: Specify numver of events
+Feature: Specify number of events
 
 Scenario: When user hasnt specified a number, 32 is the default number.
 Given the user has started a search
