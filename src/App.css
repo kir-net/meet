@@ -140,7 +140,7 @@ input[type=number]::-webkit-inner-spin-button {
     background-color: rgba(171, 27, 255, 0.039);;
 }
 .event-details{
-    padding: 5vw 8vw 1vw;
+    padding: 3vw 6vw 1vw;
 }
 .link{
     display: block; 
