@@ -12,7 +12,7 @@ class NumberOfEvents extends Component {
         if (actValue > 0 && actValue <= 32) {
             this.setState({ 
                 numberOfEvents: actValue,
-                errorText: ''
+                errorText: ' '
              });
         } else if (actValue > 32 || actValue < 1) {
             this.setState({ 
@@ -23,9 +23,9 @@ class NumberOfEvents extends Component {
         } else {
             this.setState({ 
                 numberOfEvents: NaN,
-                errorText: '' 
+                errorText: ' ' 
             });
-            actValue = NaN;
+            actValue = 1;
         }
         this.props.updateEvents(undefined, actValue);
     };
@@ -33,8 +33,7 @@ class NumberOfEvents extends Component {
     render() {
         return (
             <div>            
-                <div className="numberOfEvents">
-                <ErrorAlert className="errorAlert" text={this.state.errorText} /> 
+                <div className="numberOfEvents">             
                     <label htmlFor="number-of-events">Show max: </label>                                
                     <input
                         type="number"
@@ -45,6 +44,10 @@ class NumberOfEvents extends Component {
                         onChange={this.handleInputChanged}
                     />
                 </div>
+                <div className="errorAlert">
+                    <ErrorAlert  text={this.state.errorText} />
+                </div>
+                 
             </div>
             
         );
