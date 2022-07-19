@@ -39,14 +39,7 @@ class Event extends Component {
                 </button>            
                 {!this.state.collapsed && (
                     <div className="event-details">
-                        {event.description}
-                        <p>
-                            <a className="link" 
-                                target="_blank" 
-                                href="{event.htmlLink}"> 
-                                Add to my Calendar
-                            </a>
-                        </p>                       
+                        {event.description}                    
                     </div>                   
                 )}               
             </div>
