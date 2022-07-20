@@ -5,6 +5,7 @@ import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents, extractLocations } from './api';
 import './nprogress.css';
+import { WarningAlert } from "./Alert";
 
 
 class App extends Component {
@@ -18,6 +19,12 @@ class App extends Component {
 
     async componentDidMount() {
         this.mounted = true;
+        const isOffline = navigator.onLine ? false : true;
+        this.setState({
+            offlineInfo: isOffline
+                ? "No internet connection. Data is loaded from cache."
+                : null
+        });
         getEvents().then((events) => {
             if (this.mounted) {
                 this.setState({ 
@@ -45,10 +52,14 @@ class App extends Component {
             let locationEvents = (location === 'all') 
                 ? events 
                 : events.filter((event) => event.location === location);
+            const isOffline = navigator.onLine ? false : true;
             this.setState({
                 events: locationEvents.slice(0, maxNumEvents),
                 numberOfEvents: maxNumEvents,
-                locationSelected: location
+                locationSelected: location,
+                offlineInfo: isOffline
+                    ? "No internet connection. Data is loaded from cache."
+                    : null
             });
         });
     }
@@ -56,14 +67,19 @@ class App extends Component {
     render() {
         return (
             <div className="App">
+                
                 <CitySearch 
                     locations={this.state.locations}  
                     updateEvents={this.updateEvents} />
                 <NumberOfEvents 
                     events={this.state.events}
                     updateEvents={this.updateEvents}/>
+                <div className="warningAlert">
+                    <WarningAlert text={this.state.offlineInfo} />
+                </div>
                 <EventList 
-                    events={this.state.events}/>        
+                    events={this.state.events}/>  
+
             </div>
         );
     }
