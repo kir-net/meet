@@ -71,11 +71,12 @@ class App extends Component {
 
     getData = () => {
         const {locations, events} = this.state;
-        const data = locations.map((location)=>{
+        let data = locations.map((location)=>{
             const number = events.filter((event) => event.location === location).length
             const city = location.split(', ').shift()
             return {city, number};
         })
+        data = data.filter(data => (data.number >= 1))
         return data;
     };
 
@@ -110,7 +111,6 @@ class App extends Component {
                                 type="category" 
                                 dataKey="city"
                                 tickMargin="5"
-                                tick={{ fontFamily: 'serif' }} 
                                 textAnchor="end"
                                 angle="-60"/>
                             <YAxis 
@@ -120,7 +120,7 @@ class App extends Component {
                                 allowDecimals={false}/>
                             <Tooltip cursor={{ strokeDasharray: '3 3' }} />
                             <Scatter 
-                                data={this.getData()} 
+                                data={this.getData()}  
                                 fill="#8884d8" />
                         </ScatterChart>
                     </ResponsiveContainer>
