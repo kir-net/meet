@@ -70,10 +70,10 @@ class App extends Component {
     }
 
     getData = () => {
-        const {locations, events} = this.state;
+        let {locations, events} = this.state;
         let data = locations.map((location)=>{
-            const number = events.filter((event) => event.location === location).length
-            const city = location.split(', ').shift()
+            let number = events.filter((event) => event.location === location).length
+            let city = location.split(', ').shift()
             return {city, number};
         })
         data = data.filter(data => (data.number >= 1))
@@ -81,7 +81,7 @@ class App extends Component {
     };
 
     render() {
-        const{locations, numberOfEvents, events} = this.state;
+        let{locations, numberOfEvents, events} = this.state;
         return (
             <div className="App">  
 
@@ -110,13 +110,16 @@ class App extends Component {
                             <XAxis 
                                 type="category" 
                                 dataKey="city"
+                               
                                 tickMargin="5"
+                                interval="0"
                                 textAnchor="end"
                                 angle="-60"/>
                             <YAxis 
                                 type="number" 
                                 dataKey="number" 
                                 name="number of events"
+                               
                                 allowDecimals={false}/>
                             <Tooltip cursor={{ strokeDasharray: '3 3' }} />
                             <Scatter 
