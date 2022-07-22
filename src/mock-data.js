@@ -11,30 +11,30 @@ let mockData = [
         "description": "Have you wondered how you can ask Google to show you the list of the top ten must-see places in London? And how Google presents you the list? How can you submit the details of an application? Well, JavaScript is doing these. :) \n\nJavascript offers interactivity to a dull, static website. Come, learn JavaScript with us and make those beautiful websites.",
         "location": "London, UK",
         "creator": {
-            "email": "fullstackwebdev@careerfoundry.com",
-            "self": true
+         "email": "fullstackwebdev@careerfoundry.com",
+         "self": true
         },
         "organizer": {
-            "email": "fullstackwebdev@careerfoundry.com",
-            "self": true
+         "email": "fullstackwebdev@careerfoundry.com",
+         "self": true
         },
         "start": {
-            "dateTime": "2020-05-19T16:00:00+02:00",
-            "timeZone": "Europe/Berlin"
+         "dateTime": "2020-05-19T16:00:00+02:00",
+         "timeZone": "Europe/Berlin"
         },
         "end": {
-            "dateTime": "2020-05-19T17:00:00+02:00",
-            "timeZone": "Europe/Berlin"
+         "dateTime": "2020-05-19T17:00:00+02:00",
+         "timeZone": "Europe/Berlin"
         },
         "recurringEventId": "4eahs9ghkhrvkld72hogu9ph3e",
         "originalStartTime": {
-            "dateTime": "2020-05-19T16:00:00+02:00",
-            "timeZone": "Europe/Berlin"
+         "dateTime": "2020-05-19T16:00:00+02:00",
+         "timeZone": "Europe/Berlin"
         },
         "iCalUID": "4eahs9ghkhrvkld72hogu9ph3e@google.com",
         "sequence": 0,
         "reminders": {
-            "useDefault": true
+         "useDefault": true
         },
         "eventType": "default"
     },
