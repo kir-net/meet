@@ -4,12 +4,12 @@ import { PieChart, Pie, ResponsiveContainer } from 'recharts';
 const EventGenre = ({events}) => {
 
     const [data, setData] = useState([]);
-    
+
     const getData = () => {
         
         const genres = ['React','JavaScript','Node','jQuery','AngularJS'];
 
-        const data = genres.map((genre) => {
+        let data = genres.map((genre) => {
             const value = events.filter((event) => 
                 event.summary.split(' ').includes(genre)).length;
             return {
@@ -17,19 +17,18 @@ const EventGenre = ({events}) => {
                 value: value
             };
         });
+        console.log(data);
+        data = data.filter(data => (data.value >= 1));
+        console.log(data);
         return data;
     };
    
     useEffect(() => { 
         setData(() => getData()) 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [events]); 
 
 
-
-
-
-
-     
     return (
         <ResponsiveContainer height={400}>
             <PieChart width={400} height={400}>
@@ -49,7 +48,6 @@ const EventGenre = ({events}) => {
         </ResponsiveContainer>
     );
 };
-
 
 
 export default EventGenre;
