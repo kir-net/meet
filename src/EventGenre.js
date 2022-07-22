@@ -18,7 +18,7 @@ const EventGenre = ({events}) => {
             };
         });
         console.log(data);
-        data = data.filter(data => (data.value >= 1));
+        ;
         console.log(data);
         return data;
     };
@@ -33,7 +33,7 @@ const EventGenre = ({events}) => {
         <ResponsiveContainer height={400}>
             <PieChart width={400} height={400}>
                 <Pie
-                    data={data}
+                    data={data.filter(data => (data.value >= 1))}
                     cx={200}
                     cy={200}
                     labelLine={false}

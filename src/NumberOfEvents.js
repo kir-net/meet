@@ -22,7 +22,7 @@ class NumberOfEvents extends Component {
             actValue = 32;
         } else {
             this.setState({ 
-                numberOfEvents: NaN,
+                numberOfEvents: 1,
                 errorText: ' ' 
             });
             actValue = 1;

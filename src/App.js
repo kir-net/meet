@@ -103,13 +103,16 @@ class App extends Component {
                     <h4>Events in each city</h4>
                     <ResponsiveContainer height={400} >
                         <ScatterChart
-                            margin={{top: 20, right: 60, bottom: 20, left: 20}}
+                            margin={{top: 20, right: 60, bottom: 60, left: 20}}
                         >
                             <CartesianGrid className="grid"/>
                             <XAxis 
                                 type="category" 
-                                dataKey="city" 
-                                name="stature" />
+                                dataKey="city"
+                                tickMargin="5"
+                                tick={{ fontFamily: 'serif' }} 
+                                textAnchor="end"
+                                angle="-60"/>
                             <YAxis 
                                 type="number" 
                                 dataKey="number" 
