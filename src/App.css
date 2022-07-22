@@ -255,15 +255,8 @@ input[type="number"] {
   font-family: "Roboto";
 }
 @media only screen and (min-width: 992px) {
-  .data-vis-wrapper {
-    flex-direction: row;
-  }
-  .data-vis-wrapper .recharts-responsive-container {
-    flex-basis: 50%;
-    max-width: 50%;
-    min-width: auto;
-    margin: 0 auto;
-  }
+  
+  
   .App {
     padding: 0 5%;
     background-color: rgb(47, 83, 115);

@@ -102,7 +102,7 @@ class App extends Component {
                     <EventGenre events={events} />
 
                     <h4>Events in each city</h4>
-                    <ResponsiveContainer height={400} >
+                    <ResponsiveContainer height={300} >
                         <ScatterChart
                             margin={{top: 20, right: 60, bottom: 60, left: 20}}
                         >

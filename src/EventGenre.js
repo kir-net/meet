@@ -28,7 +28,7 @@ const EventGenre = ({events}) => {
 
     return (
         <ResponsiveContainer height={400}>
-            <PieChart width={400} height={400}>
+            <PieChart height={400}>
                 <Pie
                     data={data.filter(data => (data.value >= 1))}
                     cx={200}
