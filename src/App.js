@@ -114,25 +114,23 @@ class App extends Component {
                                 dataKey="city"
                                 fontSize="normal"                           
                                 tickMargin="5"
+                                tick={{ fontSize: '14px', width: '15px', wordWrap: 'break-word' }}
                                 interval="0"
                                 textAnchor="end"
                                 angle="300"/>
                             <YAxis 
                                 type="number" 
                                 dataKey="number" 
-                                name="number of events"
-                               
+                                name="number of events"                             
                                 allowDecimals={false}/>
-                            <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+                           
                             <Scatter 
                                 data={this.getData()}  
                                 fill="#2F5373" />
                         </ScatterChart>
                     </ResponsiveContainer>
-
                 </div>
                 
-
                 <EventList 
                     events={this.state.events}/>  
 

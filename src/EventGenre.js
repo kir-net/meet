@@ -33,7 +33,7 @@ const EventGenre = ({events}) => {
         const y = cy + radius * Math.sin(-midAngle * RADIAN);
  
         return (
-            <text x={x} y={y} fill="#2F5373" fontSize="normal" fontWeight="600" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
+            <text x={x} y={y} fill="#2F5373" fontSize="14px" fontWeight="600" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
                 {`${name}  ${(percent * 100).toFixed(0)}%`}
             </text>
         );
@@ -49,7 +49,7 @@ const EventGenre = ({events}) => {
                     labelLine={false}
                     label={renderCustomizedLabel}
                     innerRadius={10}
-                    outerRadius={50}
+                    outerRadius={70}
                     fill =  "antiquewhite"  // "#2F5373"
                     dataKey="value"
                     isAnimationActive={false}
