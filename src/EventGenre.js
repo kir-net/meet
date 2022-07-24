@@ -28,7 +28,7 @@ const EventGenre = ({events}) => {
 
     const RADIAN = Math.PI / 180;
     const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, name, percent}) => {
-        const radius = innerRadius + (outerRadius - innerRadius) * 0.4;
+        const radius = innerRadius + (outerRadius - innerRadius) * 0.6;
         const x = cx + radius * Math.cos(-midAngle * RADIAN);
         const y = cy + radius * Math.sin(-midAngle * RADIAN);
  

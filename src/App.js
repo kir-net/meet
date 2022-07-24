@@ -103,22 +103,22 @@ class App extends Component {
 
                     <h4>Events in each city</h4>
                     <ResponsiveContainer height={300} >
+                        
                         <ScatterChart
                             className="scatterChart"
                             margin={{top: 20, right: 40, bottom: 60, left: 0}}
                             
                         >
                             <CartesianGrid className="grid"/>
-                            <XAxis 
+                            <YAxis 
                                 type="category" 
                                 dataKey="city"
                                 fontSize="normal"                           
-                                tickMargin="5"
-                                tick={{ fontSize: '14px', width: '15px', wordWrap: 'break-word' }}
-                                interval="0"
+                                tickMargin="5"                              
+                                tick={{ fontSize: '13px', width: '15px', wordWrap: 'break-word' }}                             
                                 textAnchor="end"
-                                angle="300"/>
-                            <YAxis 
+                                angle="325"/>
+                            <XAxis 
                                 type="number" 
                                 dataKey="number" 
                                 name="number of events"                             
@@ -128,6 +128,7 @@ class App extends Component {
                                 data={this.getData()}  
                                 fill="#2F5373" />
                         </ScatterChart>
+                        
                     </ResponsiveContainer>
                 </div>
                 
