@@ -16,7 +16,7 @@
 } 
 .infoAlert {    
     width: 100%; 
-    padding: 0 5px;
+    padding:  5px;
     height: 40px;
 } 
 .errorAlert {   
@@ -34,7 +34,8 @@ p{
     margin-block-end: 0.2em;
 }
 h4{
-    padding-top: 12px;
+    padding-top: 5px;
+    font-size: large;
 }
 .display-none {
   display: none;
@@ -55,9 +56,6 @@ input[type="number"] {
 }
 .city {
   width: 250px;
-}
-.data-vis-wrapper{
-    background-color: whitesmoke;
 }
 .CitySearch {
  
@@ -159,16 +157,20 @@ input[type="number"] {
 .btn-toggle-details {
   display: block;
   width:fit-content;
+  font-size: 10px;
+  font-weight: 600;
   margin: 10px auto 0;
   padding: 10px 8px;
   border: 1px rgb(32, 62, 89) solid;
   border-radius: 4px;
   cursor: pointer;
-  background-color: rgb(44, 90, 131);
-  color: white;
+  background-color: darkseagreen;
+  color: rgb(47, 83, 115);
 }
 .btn-toggle-details:hover{
-    background-color: rgb(56, 118, 172);
+    background-color: rgb(47, 83, 115); 
+    color: darkseagreen;
+    border: 1px  darkseagreen solid;
 }
 .name {
   font-size: 18px; 
@@ -193,13 +195,11 @@ input[type="number"] {
   font-family: sans-serif;
 }
 .data-vis-wrapper {
+  font-size: small;
   display: flex;
   align-items: center;
+  background-color: darkseagreen;
   flex-direction: column;
-}
-.data-vis-wrapper .recharts-responsive-container {
-  min-width: 100%;
-  display: flex;
 }
 .recharts-surface {
   overflow: visible;
@@ -267,9 +267,10 @@ input[type="number"] {
         width: 50%;
     }
 }
-@media all and (max-width: 400px) {
+@media all and (max-width: 450px) {
     .event-details{
         padding: 3vw 2vw 1vw;
         text-align: left;
     }
+
 }

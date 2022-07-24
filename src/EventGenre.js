@@ -26,19 +26,33 @@ const EventGenre = ({events}) => {
     }, [events]); 
 
 
+    const RADIAN = Math.PI / 180;
+    const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, name, percent}) => {
+        const radius = innerRadius + (outerRadius - innerRadius) * 0.4;
+        const x = cx + radius * Math.cos(-midAngle * RADIAN);
+        const y = cy + radius * Math.sin(-midAngle * RADIAN);
+ 
+        return (
+            <text x={x} y={y} fill="#2F5373" fontSize="normal" fontWeight="600" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
+                {`${name}  ${(percent * 100).toFixed(0)}%`}
+            </text>
+        );
+    };
+
+
     return (
-        <ResponsiveContainer height={400}>
-            <PieChart height={400}>
+        <ResponsiveContainer  height={140} >
+            <PieChart height={140} >
                 <Pie
-                    data={data.filter(data => (data.value >= 1))}
-                    cx={200}
-                    cy={200}
+                    className="pie"
+                    data={data.filter(data => (data.value >= 1))} 
                     labelLine={false}
-                    label={({name, percent}) =>
-                        `${name} ${(percent*100).toFixed(0)}%`}
-                    outerRadius={80}
-                    fill="#8884d8"
+                    label={renderCustomizedLabel}
+                    innerRadius={10}
+                    outerRadius={50}
+                    fill =  "antiquewhite"  // "#2F5373"
                     dataKey="value"
+                    isAnimationActive={false}
                 >
                 </Pie>
             </PieChart>

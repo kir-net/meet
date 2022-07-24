@@ -98,23 +98,25 @@ class App extends Component {
                 </div>
 
                 <div className="data-vis-wrapper">
-
-                    <EventGenre events={events} />
+                    <h4>Event genres</h4>
+                    <EventGenre  events={events} />
 
                     <h4>Events in each city</h4>
                     <ResponsiveContainer height={300} >
                         <ScatterChart
-                            margin={{top: 20, right: 60, bottom: 60, left: 20}}
+                            className="scatterChart"
+                            margin={{top: 20, right: 40, bottom: 60, left: 0}}
+                            
                         >
                             <CartesianGrid className="grid"/>
                             <XAxis 
                                 type="category" 
                                 dataKey="city"
-                               
+                                fontSize="normal"                           
                                 tickMargin="5"
                                 interval="0"
                                 textAnchor="end"
-                                angle="-60"/>
+                                angle="300"/>
                             <YAxis 
                                 type="number" 
                                 dataKey="number" 
@@ -124,7 +126,7 @@ class App extends Component {
                             <Tooltip cursor={{ strokeDasharray: '3 3' }} />
                             <Scatter 
                                 data={this.getData()}  
-                                fill="#8884d8" />
+                                fill="#2F5373" />
                         </ScatterChart>
                     </ResponsiveContainer>
 
