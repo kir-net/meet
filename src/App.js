@@ -8,7 +8,7 @@ import { getEvents, extractLocations } from './api';
 import './nprogress.css';
 import { WarningAlert } from "./Alert";
 import {ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, 
-    Tooltip, ResponsiveContainer} from 'recharts';
+ResponsiveContainer} from 'recharts';
 
 
 
@@ -102,7 +102,7 @@ class App extends Component {
                     <EventGenre  events={events} />
 
                     <h4>Events in each city</h4>
-                    <ResponsiveContainer height={300} >
+                    <ResponsiveContainer height={100+50*this.getData().length} >
                         
                         <ScatterChart
                             className="scatterChart"
@@ -122,13 +122,11 @@ class App extends Component {
                                 type="number" 
                                 dataKey="number" 
                                 name="number of events"                             
-                                allowDecimals={false}/>
-                           
+                                allowDecimals={false}/>                        
                             <Scatter 
                                 data={this.getData()}  
                                 fill="#2F5373" />
-                        </ScatterChart>
-                        
+                        </ScatterChart>                       
                     </ResponsiveContainer>
                 </div>
                 
