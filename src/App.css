@@ -14,6 +14,15 @@
 .App * {
   box-sizing: border-box;
 } 
+h1{
+    color: darkseagreen;
+    border-top: 2px  darkseagreen solid;
+    border-bottom: 2px darkseagreen solid;
+}
+.subtitle{
+    color: antiquewhite;
+    
+}
 .infoAlert {    
     width: 100%; 
     padding:  5px;
@@ -117,7 +126,7 @@ input[type="number"] {
     text-align:center;
 }
 .event .title:hover{
-    color: rgb(171, 27, 255); 
+    color:darkslategrey; 
     letter-spacing: 0.3vw;   
 }
 .fb-date-location{
@@ -195,7 +204,6 @@ input[type="number"] {
   font-family: sans-serif;
 }
 .data-vis-wrapper {
-  font-size: small;
   display: flex;
   align-items: center;
   background-color: darkseagreen;
@@ -254,8 +262,7 @@ input[type="number"] {
   letter-spacing: 0.2px;
   font-family: "Roboto";
 }
-@media only screen and (min-width: 992px) {
-  
+@media only screen and (min-width: 792px) {
   
   .App {
     padding: 0 5%;

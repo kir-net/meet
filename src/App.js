@@ -74,6 +74,7 @@ class App extends Component {
         let data = locations.map((location)=>{
             let number = events.filter((event) => event.location === location).length
             let city = location.split(', ').shift()
+            city = city.split('- ').shift()
             return {city, number};
         })
         data = data.filter(data => (data.number >= 1))
@@ -84,6 +85,9 @@ class App extends Component {
         let{locations, numberOfEvents, events} = this.state;
         return (
             <div className="App">  
+
+                <h1>The Meet App</h1>
+                <h3 className="subtitle">Search for your city and see upcoming events:</h3>
 
                 <CitySearch 
                     locations={locations} 
@@ -101,28 +105,28 @@ class App extends Component {
                     <h4>Event genres</h4>
                     <EventGenre  events={events} />
 
-                    <h4>Events in each city</h4>
-                    <ResponsiveContainer height={100+50*this.getData().length} >
+                    <h4>Number of events in each city</h4>
+                    <ResponsiveContainer height={120+30*this.getData().length} >
                         
                         <ScatterChart
                             className="scatterChart"
-                            margin={{top: 20, right: 40, bottom: 60, left: 0}}
-                            
+                            margin={{top: 10, right: 30, bottom: 60, left: 25}}                         
                         >
-                            <CartesianGrid className="grid"/>
+                            <CartesianGrid fill="antiquewhite" className="grid"/>
                             <YAxis 
                                 type="category" 
-                                dataKey="city"
-                                fontSize="normal"                           
+                                dataKey="city"                                    
                                 tickMargin="5"                              
-                                tick={{ fontSize: '13px', width: '15px', wordWrap: 'break-word' }}                             
+                                tick={{ fontSize: '13px', fill:"#2F5373"}}                             
                                 textAnchor="end"
-                                angle="325"/>
+                                angle="344"/>
                             <XAxis 
                                 type="number" 
                                 dataKey="number" 
+                                orientation="top"
+                                tick={{ fontSize: '14px', fill:"#2F5373"}}  
                                 name="number of events"                             
-                                allowDecimals={false}/>                        
+                                allowDecimals={false}/>                                                
                             <Scatter 
                                 data={this.getData()}  
                                 fill="#2F5373" />

@@ -33,7 +33,15 @@ const EventGenre = ({events}) => {
         const y = cy + radius * Math.sin(-midAngle * RADIAN);
  
         return (
-            <text x={x} y={y} fill="#2F5373" fontSize="14px" fontWeight="600" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
+            <text 
+                x={x} 
+                y={y} 
+                fill="#2F5373" 
+                fontSize="13px" 
+                letterSpacing={-0.35}
+                fontWeight="600" 
+                textAnchor={x > cx ? 'start' : 'end'}              
+                dominantBaseline="central">
                 {`${name}  ${(percent * 100).toFixed(0)}%`}
             </text>
         );
@@ -41,22 +49,28 @@ const EventGenre = ({events}) => {
 
 
     return (
-        <ResponsiveContainer  height={140} >
-            <PieChart height={140} >
+        <ResponsiveContainer  className="responsiveContainerPie" height={180} >
+            <PieChart height={180} >
                 <Pie
                     className="pie"
                     data={data.filter(data => (data.value >= 1))} 
                     labelLine={false}
                     label={renderCustomizedLabel}
-                    innerRadius={10}
-                    outerRadius={70}
+                    cx={"50%"}
+                    cy={"50%"}
+                    innerRadius={15}
+                    outerRadius={"65%"}
                     fill =  "antiquewhite"  // "#2F5373"
+                    stroke="#9fbdd7"
                     dataKey="value"
                     isAnimationActive={false}
                 >
                 </Pie>
             </PieChart>
         </ResponsiveContainer>
+    
+        
+
     );
 };
 
