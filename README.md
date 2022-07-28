@@ -27,7 +27,7 @@
 <div align="center">
     <img src="img/start.png"
         alt="screenshot of meet app welcome page"
-        width=30%>
+        >
     <img src="img/filter-by-city.png"
         alt="screenshot of data visualization"
         width=30%>
