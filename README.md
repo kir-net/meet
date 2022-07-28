@@ -26,25 +26,25 @@
 
 <div align="center">
     <img src="img/start.png"
-        alt="screenshot of meet app welcome page"
-        >
+        alt="screenshot: start screen"
+        width=30%>
     <img src="img/filter-by-city.png"
-        alt="screenshot of data visualization"
-        >
+        alt="screenshot: filter by city"
+        width=30%>
     <img src="img/limit-number.png"
-        alt="screenshot of city search input"
-        >
+        alt="screenshot: limit number of search results"
+        width=30%>
 </div>
 
 <div align="center">
     <img src="img/graphs.png"
-        alt="screenshot of meet app welcome page"
+        alt="screenshot: data visualization"
         width=30%>
     <img src="img/scatter.png"
-        alt="screenshot of data visualization"
+        alt="screenshot: scatterplot"
         width=30%>
     <img src="img/details.png"
-        alt="screenshot of city search input"
+        alt="screenshot: event details visible"
         width=30%>
 </div>
 
