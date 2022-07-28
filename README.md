@@ -6,18 +6,6 @@
 
 **meet** is a serverless, progressive web application (PWA) with React using a test-driven development (TDD) technique. The application uses the Google Calendar API to fetch upcoming events.
 
-<div align="center">
-    <img src="img/start.png"
-        alt="screenshot of meet app welcome page"
-        width=20%>
-    <img src="img/graphs.png"
-        alt="screenshot of data visualization"
-        width=20%>
-    <img src="img/details.png"
-        alt="screenshot of city search input"
-        width=20%>
-
-</div>
 
 ## Built with:
 - HTML, CSS, JavaScript
@@ -36,6 +24,29 @@
 - Add an app shortcut to the home screen
 - View a chart showing the number of upcoming events by city
 
+<div align="center">
+    <img src="img/start.png"
+        alt="screenshot of meet app welcome page"
+        width=30%>
+    <img src="img/filter-by-city.png"
+        alt="screenshot of data visualization"
+        width=30%>
+    <img src="img/limit-number.png"
+        alt="screenshot of city search input"
+        width=30%>
+</div>
+
+<div align="center">
+    <img src="img/graphs.png"
+        alt="screenshot of meet app welcome page"
+        width=30%>
+    <img src="img/scatter.png"
+        alt="screenshot of data visualization"
+        width=30%>
+    <img src="img/details.png"
+        alt="screenshot of city search input"
+        width=30%>
+</div>
 
 ---
 # User stories and scenarios
