@@ -30,10 +30,10 @@
         >
     <img src="img/filter-by-city.png"
         alt="screenshot of data visualization"
-        width=30%>
+        >
     <img src="img/limit-number.png"
         alt="screenshot of city search input"
-        width=30%>
+        >
 </div>
 
 <div align="center">
