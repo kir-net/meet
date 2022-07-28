@@ -2,7 +2,7 @@
 
 <img src="public/logo192.png"
        alt="meet app logo"
-       width=45%>
+       width=15%>
 
 **meet** is a serverless, progressive web application (PWA) with React using a test-driven development (TDD) technique. The application uses the Google Calendar API to fetch upcoming events.
 
