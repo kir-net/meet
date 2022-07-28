@@ -1,6 +1,6 @@
 # meet
 
-<img src="https://kir-net.github.io/meet/public/logo192.png"
+<img src="public/logo192.png"
        alt="meet app logo"
        width=45%>
 
